@@ -29,3 +29,5 @@ Route::get('/form', function () {
     return view('form');
 });
 
+Route::get('test', [\App\Http\Controllers\TestController::class, 'index']);
+
