@@ -53,4 +53,15 @@ class TestController extends Controller
         $datatables = Datatables::of($data);
         return $datatables->make(true);
     }
+
+    public function form(){
+        return view('form');
+    }
+
+    public function table(){
+        return view('table');
+    }
+    public function profile(){
+        return view('profile');
+    }
 }

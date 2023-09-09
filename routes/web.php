@@ -19,17 +19,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('dashboard');
 
 Route::get('/blank', function () {
     return view('blank');
 });
 
-Route::get('/form', function () {
-    return view('form');
+Route::get('login', function () {
+    return view('login');
 });
-
+Route::get('form', [\App\Http\Controllers\TestController::class, 'form'])->name('form');
 Route::get('test', [\App\Http\Controllers\TestController::class, 'index']);
-Route::get('data-table', [\App\Http\Controllers\TestController::class, 'dataTable']);
+Route::get('data-table', [\App\Http\Controllers\TestController::class, 'dataTable'])->name('datatable');
 Route::post('data-table', [\App\Http\Controllers\TestController::class, 'getData'])->name('datatable.getData');
+Route::get('table', [\App\Http\Controllers\TestController::class, 'table'])->name('table');
+Route::get('profile', [\App\Http\Controllers\TestController::class, 'profile'])->name('profile');
 
