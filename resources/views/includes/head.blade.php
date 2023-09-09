@@ -23,10 +23,13 @@
     <link href="{{url('public/')}}/assets/vendor/quill/quill.snow.css" rel="stylesheet">
     <link href="{{url('public/')}}/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
     <link href="{{url('public/')}}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="{{url('public/')}}/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="{{url('public/')}}/assets/css/style.css" rel="stylesheet">
+
+    @yield('css')
 
     <!-- =======================================================
     * Template Name: NiceAdmin

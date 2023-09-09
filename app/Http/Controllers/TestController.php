@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Trans;
 use Illuminate\Http\Request;
 //use Knp\Snappy\Pdf;
 use Illuminate\Support\Facades\App;
 use PDF;
 use Response;
-
+use Yajra\DataTables\DataTables;
 class TestController extends Controller
 {
     public function index(){
+
+//        return $data;
 //        $pdf = PDF::loadView('pdf.invoice');
 ////        return $pdf->download('invoice.pdf');
 //        return $pdf->stream('invoice.pdf');
@@ -39,5 +42,15 @@ class TestController extends Controller
                 'Content-Disposition'   => 'attachment; filename="file.pdf"'
             )
         );
+    }
+
+    public function dataTable(){
+        return view('data-table');
+    }
+
+    public function getData(Request $r){
+        $data=Trans::where('Branch','DHKC');
+        $datatables = Datatables::of($data);
+        return $datatables->make(true);
     }
 }

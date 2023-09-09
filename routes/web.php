@@ -30,4 +30,6 @@ Route::get('/form', function () {
 });
 
 Route::get('test', [\App\Http\Controllers\TestController::class, 'index']);
+Route::get('data-table', [\App\Http\Controllers\TestController::class, 'dataTable']);
+Route::post('data-table', [\App\Http\Controllers\TestController::class, 'getData'])->name('datatable.getData');
 
