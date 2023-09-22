@@ -35,3 +35,7 @@ Route::post('data-table', [\App\Http\Controllers\TestController::class, 'getData
 Route::get('table', [\App\Http\Controllers\TestController::class, 'table'])->name('table');
 Route::get('profile', [\App\Http\Controllers\TestController::class, 'profile'])->name('profile');
 
+
+Route::post('getpdf', [\App\Http\Controllers\TestController::class, 'getPdf'])->name('getpdf');
+Route::get('oms', [\App\Http\Controllers\TestController::class, 'oms'])->name('oms');
+

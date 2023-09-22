@@ -10,24 +10,23 @@ use Illuminate\Support\Facades\App;
 use PDF;
 use Response;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\File;
 class TestController extends Controller
 {
     public function index(){
-
-//        return $data;
-//        $pdf = PDF::loadView('pdf.invoice');
-////        return $pdf->download('invoice.pdf');
-//        return $pdf->stream('invoice.pdf');
-//        $data = ["data" => "data"];
-//        $pdf = PDF::loadView("pdf.invoice", $data);
-//
-//        return  $pdf->inline();
+        return view('test');
 
 
+    }
+
+    public function getPdf(Request $r){
+
+//        return $r->limit;
+        File::delete('public/bill.pdf');
         $snappy = App::make('snappy.pdf');
 //To file
 
-        $html = view('pdf.invoice');
+        $html = view('pdf.invoice',compact('r'));
         $snappy->generateFromHtml($html, 'public/bill.pdf');
 
 //Or output:
@@ -63,5 +62,9 @@ class TestController extends Controller
     }
     public function profile(){
         return view('profile');
+    }
+
+    public function oms(){
+        return view('oms');
     }
 }

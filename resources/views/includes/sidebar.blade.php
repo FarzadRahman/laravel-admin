@@ -16,10 +16,15 @@
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="{{url('public/')}}/#">
                 <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="forms-nav" class="nav-content collapse {{ (\Request::route()->getName() == 'form') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
+            <ul id="forms-nav" class="nav-content collapse {{ (\Request::route()->getName() == 'form' || 'oms') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
                 <li>
                     <a href="{{route('form')}}" class="{{ (\Request::route()->getName() == 'form') ? 'active' : '' }}">
                         <i class="bi bi-circle"></i><span>Form Elements</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('oms')}}" class="{{ (\Request::route()->getName() == 'oms') ? 'active' : '' }}">
+                        <i class="bi bi-circle"></i><span>OMS</span>
                     </a>
                 </li>
 
