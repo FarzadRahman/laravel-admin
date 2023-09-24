@@ -65,6 +65,10 @@ class TestController extends Controller
     }
 
     public function oms(){
-        return view('oms');
+        return view('oms.oms');
+    }
+
+    public function kycReport(){
+        return view('kyc');
     }
 }
