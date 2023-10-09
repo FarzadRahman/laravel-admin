@@ -39,4 +39,6 @@ Route::get('profile', [\App\Http\Controllers\TestController::class, 'profile'])-
 Route::post('getpdf', [\App\Http\Controllers\TestController::class, 'getPdf'])->name('getpdf');
 Route::get('oms', [\App\Http\Controllers\TestController::class, 'oms'])->name('oms');
 Route::get('kyc-report', [\App\Http\Controllers\TestController::class, 'kycReport'])->name('kyc.report');
+Route::get('export', [\App\Http\Controllers\TestController::class, 'export'])->name('export');
+Route::get('import', [\App\Http\Controllers\TestController::class, 'import'])->name('import');
 
